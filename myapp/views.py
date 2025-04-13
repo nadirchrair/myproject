@@ -15,5 +15,5 @@ def bactirie(request,group_id):
     group = get_object_or_404(GroupBacterie, id=group_id)
     bacteries = group.bacteries.all()
     return render(request, 'bactirie.html',{'group': group, 'bacteries': bacteries})
-def bactirie_detail(request):
-    return render(request, 'detials.html')
+def predection(request):
+    return render(request, 'Predection.html')
