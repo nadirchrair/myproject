@@ -7,7 +7,7 @@
       <div class="col-lg-6 col-12 header-info">
         <h1>
           <span class="d-block text-primary">Groupe bacterie de Sarvices </span>
-          <span class="d-block text-dark">Biology</span>
+          <span class="d-block text-dark">{{ service.name }}</span>
         </h1>
       </div>
     </div>
@@ -17,9 +17,11 @@
 <section class="featured-product section-padding">
   <div class="container">
     <div class="row">
+      {% for group in groups %}
+
       <div class="col-lg-4 col-12 mb-3">
         <div class="product-thumb">
-          <a href="product-detail.html">
+          <a href="{% url 'bactirie' group.id %}">
             <img
               src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
               class="img-fluid product-image"
@@ -35,65 +37,15 @@
             <div>
               <h5 class="product-title mb-0">
                 <a href="product-detail.html" class="product-title-link"
-                  >Tree pot</a
+                  >{{ group.name }}</a
                 >
               </h5>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-lg-4 col-12 mb-3">
-        <div class="product-thumb">
-          <a href="product-detail.html">
-            <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-              class="img-fluid product-image"
-              alt=""
-            />
-          </a>
-
-          <div class="product-top d-flex">
-            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-          </div>
-
-          <div class="product-info d-flex">
-            <div>
-              <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
-                  >Fashion Set</a
-                >
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-12">
-        <div class="product-thumb">
-          <a href="product-detail.html">
-            <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-              class="img-fluid product-image"
-              alt=""
-            />
-          </a>
-
-          <div class="product-top d-flex">
-            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-          </div>
-
-          <div class="product-info d-flex">
-            <div>
-              <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
-                  >Juice Drinks</a
-                >
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+      <a href="{% url 'index' %}">Back to Services</a>
     </div>
   </div>
 </section>

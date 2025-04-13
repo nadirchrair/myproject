@@ -7,7 +7,7 @@
       <div class="col-lg-6 col-12 header-info">
         <h1>
           <span class="d-block text-primary"> bacterie de Groupe </span>
-          <span class="d-block text-dark">Biology</span>
+          <span class="d-block text-dark">{{ group.name }}</span>
         </h1>
       </div>
     </div>
@@ -17,83 +17,40 @@
 <section class="featured-product section-padding">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-12 mb-3">
-        <div class="product-thumb">
-          <a href="product-detail.html">
-            <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-              class="img-fluid product-image"
-              alt=""
-            />
-          </a>
+      {% for bacterie in bacteries %}
+      <h2>Types Of bacterie</h2>
 
-          <div class="product-top d-flex">
-            <a href="#" class="bi-heart-fill product-icon"></a>
-          </div>
+      <div class="accordion" id="accordionGeneral">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordionGeneralOne"
+              aria-expanded="true"
+              aria-controls="accordionGeneralOne"
+            >
+              {{ bacterie.name }}
+            </button>
+          </h2>
 
-          <div class="product-info d-flex">
-            <div>
-              <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
-                  >Tree pot</a
-                >
-              </h5>
+          <div
+            id="accordionGeneralOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionGeneral"
+          >
+            <div class="accordion-body">
+              <p class="large-paragraph">
+                <strong>{{ bacterie.name }}</strong>{{ bacterie.explanation }}
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-lg-4 col-12 mb-3">
-        <div class="product-thumb">
-          <a href="product-detail.html">
-            <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-              class="img-fluid product-image"
-              alt=""
-            />
-          </a>
-
-          <div class="product-top d-flex">
-            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-          </div>
-
-          <div class="product-info d-flex">
-            <div>
-              <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
-                  >Fashion Set</a
-                >
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-12">
-        <div class="product-thumb">
-          <a href="product-detail.html">
-            <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-              class="img-fluid product-image"
-              alt=""
-            />
-          </a>
-
-          <div class="product-top d-flex">
-            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-          </div>
-
-          <div class="product-info d-flex">
-            <div>
-              <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
-                  >Juice Drinks</a
-                >
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+      <a href="{% url 'groupebactirie' group.service.id %}">Back to Groups</a>
     </div>
   </div>
 </section>
