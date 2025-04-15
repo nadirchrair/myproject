@@ -17,3 +17,5 @@ def bactirie(request,group_id):
     return render(request, 'bactirie.html',{'group': group, 'bacteries': bacteries})
 def predection(request):
     return render(request, 'Predection.html')
+def contact(request):
+    return render(request, 'contact.html')

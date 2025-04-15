@@ -17,39 +17,92 @@
 <section class="featured-product section-padding">
   <div class="container">
     <div class="row">
-      {% for bacterie in bacteries %}
       <h2>Types Of bacterie</h2>
 
       <div class="accordion" id="accordionGeneral">
+        {% for bacterie in bacteries %}
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+          <h2 class="accordion-header" id="heading{{ bacterie.id }}">
             <button
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#accordionGeneralOne"
-              aria-expanded="true"
-              aria-controls="accordionGeneralOne"
+              data-bs-target="#collapse{{ bacterie.id }}"
+              aria-expanded="false"
+              aria-controls="collapse{{ bacterie.id }}"
             >
               {{ bacterie.name }}
             </button>
           </h2>
 
           <div
-            id="accordionGeneralOne"
+            id="collapse{{ bacterie.id }}"
             class="accordion-collapse collapse"
-            aria-labelledby="headingOne"
+            aria-labelledby="heading{{ bacterie.id }}"
             data-bs-parent="#accordionGeneral"
           >
             <div class="accordion-body">
-              <p class="large-paragraph">
-                <strong>{{ bacterie.name }}</strong>{{ bacterie.explanation }}
-              </p>
+              <p class="large-paragraph">{{ bacterie.explanation }}</p>
+              <div class="container">
+                <div class="row">
+                  {% if bacterie.image1 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image1.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 1"
+                    />
+                  </div>
+                  {% endif %} {% if bacterie.image2 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image2.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 2"
+                    />
+                  </div>
+                  {% endif %} {% if bacterie.image3 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image3.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 3"
+                    />
+                  </div>
+                  {% endif %} {% if bacterie.image4 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image4.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 4"
+                    />
+                  </div>
+                  {% endif %} {% if bacterie.image5 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image5.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 5"
+                    />
+                  </div>
+                  {% endif %} {% if bacterie.image6 %}
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="{{ bacterie.image6.url }}"
+                      class="img-fluid rounded"
+                      alt="Image 6"
+                    />
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        {% endfor %}
       </div>
-      {% endfor %}
+
       <a href="{% url 'groupebactirie' group.service.id %}">Back to Groups</a>
     </div>
   </div>

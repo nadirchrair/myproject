@@ -36,7 +36,9 @@
           <div class="product-info d-flex">
             <div>
               <h5 class="product-title mb-0">
-                <a href="product-detail.html" class="product-title-link"
+                <a
+                  href="{% url 'bactirie' group.id %}"
+                  class="product-title-link"
                   >{{ group.name }}</a
                 >
               </h5>
