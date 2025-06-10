@@ -10,6 +10,7 @@ class Service(models.Model):
 class GroupBacterie(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='groups')
     name = models.CharField(max_length=100)
+    image1 = models.ImageField(upload_to='group_bacterie_images/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} ({self.service.name})"
