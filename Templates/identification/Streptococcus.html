@@ -1,0 +1,154 @@
+{% extends 'statefiles/base.html' %} {% load static %} {% block content %}
+
+<style>
+  .form-container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field label {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .field select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+
+  .submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .submit-button button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-button button:hover {
+    background-color: #2980b9;
+  }
+</style>
+
+<div class="form-container" style="margin-top: 60px; padding-top: 40px">
+  <h2 class="form-title">Identification Form Streptococcus</h2>
+  <form>
+    <div class="row">
+      <div class="field">
+        <label for="adh">ADH</label>
+        <select name="adh" id="adh">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="nitrate_reductase">Nitrate réductase</label>
+        <select name="nitrate_reductase" id="nitrate_reductase">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="vp">VP</label>
+        <select name="vp" id="vp">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="rm">RM</label>
+        <select name="rm" id="rm">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="glucose">Glucose</label>
+        <select name="glucose" id="glucose">
+          <option value="fermente">Fermenté</option>
+          <option value="non_fermente">Non Fermenté</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="lactose">Lactose</label>
+        <select name="lactose" id="lactose">
+          <option value="fermente">Fermenté</option>
+          <option value="non_fermente">Non Fermenté</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="saccharose">Saccharose</label>
+        <select name="saccharose" id="saccharose">
+          <option value="fermente">Fermenté</option>
+          <option value="non_fermente">Non Fermenté</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="hemolyse">Hémolyse</label>
+        <select name="hemolyse" id="hemolyse">
+          <option value="alpha">Alpha</option>
+          <option value="beta">Bêta</option>
+          <option value="gamma">Gamma</option>
+          <option value="aucune">Aucune</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="catalase">Catalase</label>
+        <select name="catalase" id="catalase">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

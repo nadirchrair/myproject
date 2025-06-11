@@ -1,0 +1,240 @@
+{% extends 'statefiles/base.html' %} {% load static %} {% block content %}
+
+<style>
+  .form-container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field label {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .field select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+
+  .submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .submit-button button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-button button:hover {
+    background-color: #2980b9;
+  }
+</style>
+
+<div class="form-container" style="margin-top: 60px; padding-top: 40px">
+  <h2 class="form-title">Identification Form stash</h2>
+  <form>
+    <div class="row">
+      <div class="field">
+        <label for="GLU">GLU</label>
+        <select name="GLU" id="GLU">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="FRU">FRU</label>
+        <select name="FRU" id="FRU">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="MNE">MNE</label>
+        <select name="MNE" id="MNE">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="MAL">MAL</label>
+        <select name="MAL" id="MAL">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="LAC">LAC</label>
+        <select name="LAC" id="LAC">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="TRE">TRE</label>
+        <select name="TRE" id="TRE">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="MAN">MAN</label>
+        <select name="MAN" id="MAN">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="XLT">XLT</label>
+        <select name="XLT" id="XLT">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="MEL">MEL</label>
+        <select name="MEL" id="MEL">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="NIT">NIT</label>
+        <select name="NIT" id="NIT">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="PAL">PAL</label>
+        <select name="PAL" id="PAL">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="VP">VP</label>
+        <select name="VP" id="VP">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="RAF">RAF</label>
+        <select name="RAF" id="RAF">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="XYL">XYL</label>
+        <select name="XYL" id="XYL">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="SAC">SAC</label>
+        <select name="SAC" id="SAC">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="MDG">MDG</label>
+        <select name="MDG" id="MDG">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="NAG">NAG</label>
+        <select name="NAG" id="NAG">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ADH">ADH</label>
+        <select name="ADH" id="ADH">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="URE">URE</label>
+        <select name="URE" id="URE">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="Catalase">Catalase</label>
+        <select name="Catalase" id="Catalase">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Identification</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -17,5 +17,17 @@ def bactirie(request,group_id):
     return render(request, 'bactirie.html',{'group': group, 'bacteries': bacteries})
 def predection(request):
     return render(request, 'Predection.html')
+def predectionEntérobactéries(request):
+    return render(request, 'identification/Entérobactéries.html')
+def predectionstash(request):
+    return render(request, 'identification/stash.html')
+def predectionPseudo_Aeromonas(request):
+    return render(request, 'identification/Pseudo-Aeromonas.html')
+def predectionEnterococcus(request):
+    return render(request, 'identification/Enterococcus.html')
+def predectionStreptococcus(request):
+    return render(request, 'identification/Streptococcus.html')
+def predectionBacillus(request):
+    return render(request, 'identification/Bacillus.html')
 def contact(request):
     return render(request, 'contact.html')

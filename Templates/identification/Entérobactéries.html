@@ -1,175 +1,246 @@
 {% extends 'statefiles/base.html' %} {% load static %} {% block content %}
 
-<h2>Identification Form</h2>
-<form>
-  <label for="ONPG">ONPG:</label>
-  <select name="ONPG" id="ONPG">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+<style>
+  .form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 
-  <label for="ADH">ADH:</label>
-  <select name="ADH" id="ADH">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
 
-  <label for="LDC">LDC:</label>
-  <select name="LDC" id="LDC">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 
-  <label for="ODC">ODC:</label>
-  <select name="ODC" id="ODC">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .field {
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
 
-  <label for="CIT">CIT:</label>
-  <select name="CIT" id="CIT">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .field label {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
 
-  <label for="H2S">H2S:</label>
-  <select name="H2S" id="H2S">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .field select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
 
-  <label for="URE">URE:</label>
-  <select name="URE" id="URE">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
 
-  <label for="TDA">TDA:</label>
-  <select name="TDA" id="TDA">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .submit-button button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-  <label for="IND">IND:</label>
-  <select name="IND" id="IND">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+  .submit-button button:hover {
+    background-color: #2980b9;
+  }
+</style>
+<div class="form-container mt-5">
+  <h2 class="form-title">Identification Form</h2>
+  <form>
+    <div class="row">
+      <label for="ONPG">ONPG:</label>
+      <select name="ONPG" id="ONPG">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="VP">VP:</label>
-  <select name="VP" id="VP">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="ADH">ADH:</label>
+      <select name="ADH" id="ADH">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="GEL">GEL:</label>
-  <select name="GEL" id="GEL">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="LDC">LDC:</label>
+      <select name="LDC" id="LDC">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="GLU">GLU:</label>
-  <select name="GLU" id="GLU">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="ODC">ODC:</label>
+      <select name="ODC" id="ODC">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="MAN">MAN:</label>
-  <select name="MAN" id="MAN">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="CIT">CIT:</label>
+      <select name="CIT" id="CIT">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="INO">INO:</label>
-  <select name="INO" id="INO">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="H2S">H2S:</label>
+      <select name="H2S" id="H2S">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="SOR">SOR:</label>
-  <select name="SOR" id="SOR">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="URE">URE:</label>
+      <select name="URE" id="URE">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="RHA">RHA:</label>
-  <select name="RHA" id="RHA">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="TDA">TDA:</label>
+      <select name="TDA" id="TDA">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="SAC">SAC:</label>
-  <select name="SAC" id="SAC">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="IND">IND:</label>
+      <select name="IND" id="IND">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="MEL">MEL:</label>
-  <select name="MEL" id="MEL">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="VP">VP:</label>
+      <select name="VP" id="VP">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="AMY">AMY:</label>
-  <select name="AMY" id="AMY">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="GEL">GEL:</label>
+      <select name="GEL" id="GEL">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="ARA">ARA:</label>
-  <select name="ARA" id="ARA">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="GLU">GLU:</label>
+      <select name="GLU" id="GLU">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="Oxydase">Oxydase:</label>
-  <select name="Oxydase" id="Oxydase">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="MAN">MAN:</label>
+      <select name="MAN" id="MAN">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="NO2">NO2:</label>
-  <select name="NO2" id="NO2">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="INO">INO:</label>
+      <select name="INO" id="INO">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="N2">N2:</label>
-  <select name="N2" id="N2">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="SOR">SOR:</label>
+      <select name="SOR" id="SOR">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <label for="Mobilité">Mobilité:</label>
-  <select name="Mobilité" id="Mobilité">
-    <option value="positive">Positive</option>
-    <option value="negative">Negative</option>
-  </select>
-  <br /><br />
+      <label for="RHA">RHA:</label>
+      <select name="RHA" id="RHA">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
 
-  <button type="submit">Identification</button>
-</form>
+      <label for="SAC">SAC:</label>
+      <select name="SAC" id="SAC">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="MEL">MEL:</label>
+      <select name="MEL" id="MEL">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="AMY">AMY:</label>
+      <select name="AMY" id="AMY">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="ARA">ARA:</label>
+      <select name="ARA" id="ARA">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="Oxydase">Oxydase:</label>
+      <select name="Oxydase" id="Oxydase">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="NO2">NO2:</label>
+      <select name="NO2" id="NO2">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="N2">N2:</label>
+      <select name="N2" id="N2">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+
+      <label for="Mobilité">Mobilité:</label>
+      <select name="Mobilité" id="Mobilité">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+      <br /><br />
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Identification</button>
+    </div>
+  </form>
+</div>
 {% endblock %}
