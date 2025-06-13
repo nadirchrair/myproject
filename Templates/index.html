@@ -45,7 +45,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="mb-5">Get started with <span>Bacti</span> Zoom</h2>
+          <h2 class="mb-5">BactiZoom scope <span>Bacti</span> Zoom</h2>
         </div>
 
         <div class="col-lg-2 col-12 mt-auto mb-auto">
@@ -196,12 +196,7 @@
 
                 <div class="col-lg-5 col-12">
                   <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
-                    <h4 class="mb-3">What can help you?</h4>
-
-                    <p>
-                      Over three years in business, We’ve had the chance on
-                      projects
-                    </p>
+                    <h4 class="mb-3"></h4>
 
                     <div class="skill-thumb mt-3">
                       <strong>Identification bactérienne</strong>
@@ -273,7 +268,7 @@
 
         <div class="col-lg-6 col-12">
           <div class="px-5 py-5 py-lg-0">
-            <h2 class="mb-1"><span>Adn</span> Celleuriers</h2>
+            <h2 class="mb-1"><span>Objectifs</span></h2>
 
             <p class="">
               BactiZoom, initialement limitée, évolue pour devenir une référence
@@ -293,19 +288,27 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="mb-5">Hopital Services</h2>
+          <h2 class="mb-5">Groupes bactériens par service</h2>
         </div>
         {% for service in services %}
 
         <div class="col-lg-4 col-12 mb-3">
           <div class="product-thumb">
             <a href="{% url 'groupebactirie' service.id %}">
-              <img
-                src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
-                class="img-fluid product-image"
-                alt=""
-              />
-            </a>
+              {% if service.image %}  <!-- Check if image exists -->
+        <img 
+          src="{{ service.image.url }}" 
+          class="img-fluid product-image" 
+          alt="{{ service.name }}"
+        />
+      {% else %}
+        <!-- Fallback image if no image is uploaded -->
+        <img 
+          src="{% static 'images/ingenieur-biochimiste.jpg' %}" 
+          class="img-fluid product-image" 
+          alt="{{ service.name }}"
+        />
+      {% endif %}
 
             <div class="product-top d-flex">
               <a href="#" class="bi-heart-fill product-icon"></a>
