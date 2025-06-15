@@ -1,6 +1,4 @@
-{% extends 'statefiles/base.html' %} {% load static %}
-<!-- Add this line -->
-{% block content %}
+{% extends 'statefiles/base.html' %} {% load static %} {% block content %}
 <header class="site-header section-padding-img site-header-image">
   <div class="container">
     <div class="row">
@@ -17,12 +15,11 @@
   <div class="container">
     <div class="row">
       {% for group in groups %}
-
       <div class="col-lg-4 col-12 mb-3">
         <div class="product-thumb">
           <a href="{% url 'bactirie' group.id %}">
             <img
-              src="{%  static 'images/ingenieur-biochimiste.jpg' %}"
+              src="{% static 'images/ingenieur-biochimiste.jpg' %}"
               class="img-fluid product-image"
               alt=""
             />
@@ -34,6 +31,7 @@
 
           <div class="product-info d-flex">
             <div>
+              {% if group.name == "Entérobactéries" %}
               <h5 class="product-title mb-0">
                 <a
                   href="{% url 'bactirie' group.id %}"
@@ -41,6 +39,16 @@
                   >{{ group.name }}</a
                 >
               </h5>
+              {% else %}
+              <h5 class="product-title mb-0">
+                <a
+                  href="{% url 'bactirie' group.id %}"
+                  class="product-title-link"
+                  style="font-style: italic"
+                  >{{ group.name }}</a
+                >
+              </h5>
+              {% endif %}
             </div>
           </div>
         </div>
