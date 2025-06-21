@@ -67,7 +67,8 @@
 </style>
 <div class="form-container mt-5">
   <h2 class="form-title">Identification Form</h2>
-  <form>
+  <form method="POST" action="{% url 'predict_bacteria' %}">
+    {% csrf_token %}
     <div class="row">
       <label for="ONPG">ONPG:</label>
       <select name="ONPG" id="ONPG">

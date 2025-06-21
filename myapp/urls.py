@@ -8,6 +8,8 @@ urlpatterns = [
     path('group/<int:group_id>/bacteries/', views.bactirie, name='bactirie'),
     path('predection/', views.predection, name='predection'),
     path('predection/Entérobactéries/', views.predectionEntérobactéries, name='predectionEntérobactéries'),
+      path('result/', views.predict_bacteria, name='predict_bacteria'),
+
     path('predection/stash/', views.predectionstash, name='predectionstash'),
     path('predection/Pseudo-Aeromonas/', views.predectionPseudo_Aeromonas, name='predectionPseudo_Aeromonas'),
  path('predection/Enterococcus/', views.predectionEnterococcus, name='predectionEnterococcus'),
