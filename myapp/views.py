@@ -53,7 +53,7 @@ def predict_bacteria(request):
         input_array = np.array(input_data).reshape(1, -1)
         pred = rf_model.predict(input_array)
         label = label_encoder.inverse_transform(pred)[0]
-        result = f"Bacterium Identified: {label}"
+        result = f" {label}"
     return render(request, 'formulaire.html', {'result': result})
 def predectionstash(request):
     return render(request, 'identification/stash.html')
